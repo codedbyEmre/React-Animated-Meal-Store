@@ -12,8 +12,8 @@ const Category = ({ category, index }) => {
       <Link to={`/category/${category.strCategory}`}>
         <img className="w-full" src={category.strCategoryThumb} alt={category.strCategory} />
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{category.strCategory}</div>
-          <p className="text-gray-700 text-base line-clamp-4">{category.strCategoryDescription}</p>
+          <div className="text-gray-700 font-bold text-xl mb-2">{category.strCategory}</div>
+          <p className="text-gray-500 text-base line-clamp-4">{category.strCategoryDescription}</p>
         </div>
       </Link>
     </motion.div>
