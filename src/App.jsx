@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 const App = () => {
   const [categories, setCategories] = useState([]);
-  const [showSidebar, setShowSidebar] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(true);
 
   const getCategories = async () => {
     const res = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
