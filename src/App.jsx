@@ -58,7 +58,17 @@ const App = () => {
         {/* Drawer */}
         <div className={`drawer-side ${showSidebar ? 'border border-r-gray-300 border-t-0' : ''} `}>
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className={showSidebar ? 'menu bg-base-100 w-64 p-2' : 'menu bg-base-100 w-0 p-0'}>
+          <ul className={showSidebar ? 'menu bg-white w-64 p-2' : 'menu bg-white w-0 p-0 overflow'}>
+            <div className="flex  flex-col items-center">
+              <div className="avatar">
+                <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <img src="https://avatars.githubusercontent.com/u/67799995?s=400&u=0c3fa793a6479ecc176433d53193b01e6a2f6a58&v=4" />
+                </div>
+              </div>
+              <h2 className="mt-2 font-semibold text-lg text-gray-700">Emre Süslü</h2>
+              <p className="text-gray-600 text-base">Gourmet</p>
+            </div>
+            <div className="divider mb-0 mt-2"></div>
             {categories.map((category, index) => (
               <li className="my-1" key={index}>
                 <NavLink to={`/category/${category.strCategory}`} className="py-[10px]">
