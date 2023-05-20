@@ -1,4 +1,4 @@
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { Link, NavLink, Route, Routes } from 'react-router-dom';
 import ViewHome from './views/ViewHome';
 import MealsByCategory from './components/MealsByCategory';
 import { useState, useEffect } from 'react';
@@ -27,9 +27,12 @@ const App = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
           {/* Navbar */}
-          <div className="navbar bg-base-100 shadow-lg">
+          <nav className="navbar bg-base-100 shadow-lg">
             <div className="flex-1">
-              <a className="btn btn-ghost normal-case text-2xl ml-2">Meal Store</a>
+              <Link to="/" className="btn btn-ghost normal-case text-3xl ml-2">
+                <span className="text-primary">Meal</span>
+                Store
+              </Link>
             </div>
             <div className="flex-none">
               {/* Hamburger menu */}
@@ -45,7 +48,7 @@ const App = () => {
               </button>
               <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             </div>
-          </div>
+          </nav>
           {/* Rendered routes */}
           <div className="max-w-8xl mx-auto p-8">
             <Routes>
@@ -58,14 +61,14 @@ const App = () => {
         {/* Drawer */}
         <div className={`drawer-side ${showSidebar ? 'border border-r-gray-300 border-t-0' : ''} `}>
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className={showSidebar ? 'menu bg-white w-64 p-2' : 'menu bg-white w-0 p-0 overflow'}>
+          <ul className={showSidebar ? 'menu bg-white w-72 p-2' : 'menu bg-white w-0 p-0 overflow-hidden'}>
             <div className="flex  flex-col items-center">
               <div className="avatar">
                 <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                   <img src="https://avatars.githubusercontent.com/u/67799995?s=400&u=0c3fa793a6479ecc176433d53193b01e6a2f6a58&v=4" />
                 </div>
               </div>
-              <h2 className="mt-2 font-semibold text-lg text-gray-700">Emre Süslü</h2>
+              <h2 className="mt-2 font-semibold text-xl text-gray-700">Emre Süslü</h2>
               <p className="text-gray-600 text-base">Gourmet</p>
             </div>
             <div className="divider mb-0 mt-2"></div>
