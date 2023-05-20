@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const ViewHome = () => {
   const [meal, setMeal] = useState([]);
@@ -72,7 +73,7 @@ const ViewHome = () => {
             transition={{ type: 'tween', duration: 1.5, delay: 1.5, ease: [0.25, 0.25, 0.25, 0.75] }}
             className="btn btn-primary"
           >
-            View More
+            <Link to={`/meal/${meal.idMeal}`}>View Detail</Link>
           </motion.button>
         </div>
       </div>

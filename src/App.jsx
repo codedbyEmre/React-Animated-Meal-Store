@@ -2,6 +2,7 @@ import { Link, NavLink, Route, Routes } from 'react-router-dom';
 import ViewHome from './views/ViewHome';
 import MealsByCategory from './components/MealsByCategory';
 import { useState, useEffect } from 'react';
+import MealDetails from './components/MealDetails';
 
 const App = () => {
   const [categories, setCategories] = useState([]);
@@ -54,15 +55,16 @@ const App = () => {
             <Routes>
               <Route path="/" element={<ViewHome />} />
               <Route path="/category/:name" element={<MealsByCategory />} />
+              <Route path="/meal/:id" element={<MealDetails />} />
             </Routes>
           </div>
         </div>
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         {/* Drawer */}
-        <div className={`drawer-side ${showSidebar ? 'border border-r-gray-300 border-t-0' : ''} `}>
+        <div className={`drawer-side bg-white ${showSidebar ? 'border border-r-gray-300 border-t-0' : ''} `}>
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className={showSidebar ? 'menu bg-white w-72 p-2' : 'menu bg-white w-0 p-0 overflow-hidden'}>
-            <div className="flex  flex-col items-center">
+          <ul className={showSidebar ? 'menu  w-72 p-2' : 'menu w-0 p-0'}>
+            <div className="flex flex-col items-center">
               <div className="avatar">
                 <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                   <img src="https://avatars.githubusercontent.com/u/67799995?s=400&u=0c3fa793a6479ecc176433d53193b01e6a2f6a58&v=4" />
