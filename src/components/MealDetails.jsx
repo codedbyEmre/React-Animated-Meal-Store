@@ -36,16 +36,25 @@ const MealDetails = () => {
         <h2 className="card-title text-4xl">{meal?.strMeal}</h2>
         {/* Links */}
         <p className="flex my-3">
-          <span className="cursor-pointer">
-            <a href={meal?.strSource} target="_blank">
-              <AiOutlineLink size="24px" />
-            </a>
-          </span>
-          <span className="ml-3 cursor-pointer">
-            <a href={meal?.strYoutube} target="_blank">
-              <FaYoutube color="#FF0000" size="24px" />
-            </a>
-          </span>
+          {meal?.strSource ? (
+            <span className="cursor-pointer">
+              <a href={meal?.strSource} target="_blank">
+                <AiOutlineLink size="24px" />
+              </a>
+            </span>
+          ) : (
+            ''
+          )}
+
+          {meal?.strYoutube ? (
+            <span className="ml-3 cursor-pointer">
+              <a href={meal?.strYoutube} target="_blank">
+                <FaYoutube color="#FF0000" size="24px" />
+              </a>
+            </span>
+          ) : (
+            ''
+          )}
         </p>
         {/* Category and Area */}
         <p>

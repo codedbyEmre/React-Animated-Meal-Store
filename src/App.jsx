@@ -1,4 +1,6 @@
 import { Link, NavLink, Route, Routes } from 'react-router-dom';
+import { BiCategoryAlt, BiWorld } from 'react-icons/bi';
+import { GiMeal } from 'react-icons/gi';
 import ViewHome from './views/ViewHome';
 import MealsByCategory from './components/MealsByCategory';
 import { useState, useEffect } from 'react';
@@ -7,6 +9,8 @@ import MealsByIngredient from './components/MealsByIngredient';
 
 const App = () => {
   const [categories, setCategories] = useState([]);
+  const [areas, setAreas] = useState([]);
+  const [ingredients, setIngredients] = useState([]);
   const [showSidebar, setShowSidebar] = useState(true);
 
   const getCategories = async () => {
@@ -15,8 +19,22 @@ const App = () => {
     setCategories(data.categories);
   };
 
+  const getAreas = async () => {
+    const res = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list');
+    const data = await res.json();
+    setAreas(data.meals);
+  };
+
+  const getIngredients = async () => {
+    const res = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list');
+    const data = await res.json();
+    setIngredients(data.meals);
+  };
+
   useEffect(() => {
     getCategories();
+    getAreas();
+    getIngredients();
   }, []);
 
   const handleSidebar = () => {
@@ -65,7 +83,7 @@ const App = () => {
         {/* Drawer */}
         <div className={`drawer-side bg-white ${showSidebar ? 'border border-r-gray-300 border-t-0' : ''} `}>
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className={showSidebar ? 'menu  w-72 p-2' : 'menu w-0 p-0'}>
+          <ul className={showSidebar ? 'menu w-72 p-2' : 'menu w-0 p-0'}>
             <div className="flex flex-col items-center">
               <div className="avatar">
                 <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
@@ -76,18 +94,72 @@ const App = () => {
               <p className="text-gray-600 text-base">Gourmet</p>
             </div>
             <div className="divider mb-0 mt-2"></div>
-            {categories.map((category, index) => (
-              <li className="my-1" key={index}>
-                <NavLink to={`/category/${category.strCategory}`} className="py-[10px]">
-                  <img
-                    className="w-10 rounded-full h-10 object-cover"
-                    src={category.strCategoryThumb}
-                    alt={category.strCategory}
-                  />
-                  <p className="text-xl ml-1">{category.strCategory}</p>
-                </NavLink>
-              </li>
-            ))}
+            {/* Categories */}
+            <div tabIndex={0} className="collapse collapse-arrow">
+              <input type="checkbox" />
+
+              <div className="collapse-title text-xl font-medium flex items-center">
+                <BiCategoryAlt className="mr-2" />
+                Categories
+              </div>
+              <div className="collapse-content">
+                {categories.map((category, index) => (
+                  <li className="my-1" key={index}>
+                    <NavLink to={`/category/${category?.strCategory}`} className="py-[10px]">
+                      <img
+                        className="w-10 rounded-full h-10 object-cover"
+                        src={category?.strCategoryThumb}
+                        alt={category?.strCategory}
+                      />
+                      <p className="text-xl ml-1">{category?.strCategory}</p>
+                    </NavLink>
+                  </li>
+                ))}
+              </div>
+            </div>
+            <hr />
+            {/* Areas */}
+            <div tabIndex={0} className="collapse collapse-arrow">
+              <input type="checkbox" />
+
+              <div className="collapse-title text-xl font-medium flex items-center">
+                <BiWorld className="mr-2" />
+                Areas
+              </div>
+              <div className="collapse-content">
+                {areas.map((area, index) => (
+                  <li className="my-1" key={index}>
+                    <Link className="py-[10px]">
+                      <p className="text-xl ml-1">{area?.strArea}</p>
+                    </Link>
+                  </li>
+                ))}
+              </div>
+            </div>
+            <hr />
+            {/* Ingredients */}
+            <div tabIndex={0} className="collapse collapse-arrow">
+              <input type="checkbox" />
+
+              <div className="collapse-title text-xl font-medium flex items-center">
+                <GiMeal className="mr-2" />
+                Ingredients
+              </div>
+              <div className="collapse-content">
+                {ingredients.map((ingredient, index) => (
+                  <li className="my-1" key={index}>
+                    <NavLink to={`/ingredient/${ingredient?.strIngredient}`} className="py-[10px]">
+                      <img
+                        className="w-10 rounded-full h-10 object-cover"
+                        src={`https://www.themealdb.com/images/ingredients/${ingredient?.strIngredient}-Small.png`}
+                        alt={ingredient?.strIngredient}
+                      />
+                      <p className="text-xl ml-1">{ingredient?.strIngredient}</p>
+                    </NavLink>
+                  </li>
+                ))}
+              </div>
+            </div>
           </ul>
         </div>
       </div>

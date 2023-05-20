@@ -7,6 +7,7 @@ const MealsByIngredient = () => {
   const [meals, setMeals] = useState([]);
 
   const getCategoryByName = async () => {
+    setMeals([]);
     const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${name}`);
     const data = await res.json();
     setMeals(data.meals);
@@ -16,17 +17,25 @@ const MealsByIngredient = () => {
     getCategoryByName();
   }, [name]);
 
+  let mealInfoText = (meals && meals.length) > 1 ? 'meals that contain' : 'meal that contains';
+
   return (
     <>
-      <h2 className="text-2xl mb-6 sm:text-left text-center">
-        <span className="font-semibold">{meals.length}</span> meals that contain
-        <span className="font-semibold ml-2">{name}</span>
-      </h2>
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
-        {meals.map((meal, index) => (
-          <Meal meal={meal} index={index} key={meal.idMeal} />
-        ))}
-      </div>
+      {meals && meals.length ? (
+        <>
+          <h2 className="text-2xl mb-6 sm:text-left text-center">
+            <span className="font-semibold">{meals.length}</span> {mealInfoText}
+            <span className="font-semibold ml-2">{name}</span>
+          </h2>
+          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
+            {meals.map((meal, index) => (
+              <Meal meal={meal} index={index} key={meal.idMeal} />
+            ))}
+          </div>
+        </>
+      ) : (
+        <h2 className="text-2xl sm:text-left text-center">No meals found</h2>
+      )}
     </>
   );
 };
