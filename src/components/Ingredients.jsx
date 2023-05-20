@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Ingredients = ({ meal }) => {
   const ingredients = [];
 
@@ -16,11 +18,13 @@ const Ingredients = ({ meal }) => {
     const measurement = meal ? meal[`strMeasure${i}`] : '';
     if (ingredient && measurement) {
       ingredients.push(
-        <li className="flex flex-col items-center text-center p-3" key={i}>
-          {getImageByIngredient(ingredient)}
-          <p className="font-medium">{ingredient}</p>
-          <p>{measurement}</p>
-        </li>
+        <Link to={`/ingredient/${ingredient}`} key={i}>
+          <li className="flex flex-col items-center text-center p-3">
+            {getImageByIngredient(ingredient)}
+            <p className="font-medium">{ingredient}</p>
+            <p>{measurement}</p>
+          </li>
+        </Link>
       );
     }
   }

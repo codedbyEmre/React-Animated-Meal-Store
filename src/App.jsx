@@ -3,6 +3,7 @@ import ViewHome from './views/ViewHome';
 import MealsByCategory from './components/MealsByCategory';
 import { useState, useEffect } from 'react';
 import MealDetails from './components/MealDetails';
+import MealsByIngredient from './components/MealsByIngredient';
 
 const App = () => {
   const [categories, setCategories] = useState([]);
@@ -56,6 +57,7 @@ const App = () => {
               <Route path="/" element={<ViewHome />} />
               <Route path="/category/:name" element={<MealsByCategory />} />
               <Route path="/meal/:id" element={<MealDetails />} />
+              <Route path="/ingredient/:name" element={<MealsByIngredient />} />
             </Routes>
           </div>
         </div>
