@@ -1,0 +1,112 @@
+{
+  "meals": [
+    {
+      "strArea": "American",
+      "flag": "./src/assets/us.svg"
+    },
+    {
+      "strArea": "British",
+      "flag": "./src/assets/gb.svg"
+    },
+    {
+      "strArea": "Canadian",
+      "flag": "./src/assets/ca.svg"
+    },
+    {
+      "strArea": "Chinese",
+      "flag": "./src/assets/cn.svg"
+    },
+    {
+      "strArea": "Croatian",
+      "flag": "./src/assets/hr.svg"
+    },
+    {
+      "strArea": "Dutch",
+      "flag": "./src/assets/nl.svg"
+    },
+    {
+      "strArea": "Egyptian",
+      "flag": "./src/assets/eg.svg"
+    },
+    {
+      "strArea": "Filipino",
+      "flag": "./src/assets/ph.svg"
+    },
+    {
+      "strArea": "French",
+      "flag": "./src/assets/fr.svg"
+    },
+    {
+      "strArea": "Greek",
+      "flag": "./src/assets/gr.svg"
+    },
+    {
+      "strArea": "Indian",
+      "flag": "./src/assets/in.svg"
+    },
+    {
+      "strArea": "Irish",
+      "flag": "./src/assets/ie.svg"
+    },
+    {
+      "strArea": "Italian",
+      "flag": "./src/assets/it.svg"
+    },
+    {
+      "strArea": "Jamaican",
+      "flag": "./src/assets/jm.svg"
+    },
+    {
+      "strArea": "Japanese",
+      "flag": "./src/assets/jp.svg"
+    },
+    {
+      "strArea": "Kenyan",
+      "flag": "./src/assets/ke.svg"
+    },
+    {
+      "strArea": "Malaysian",
+      "flag": "./src/assets/my.svg"
+    },
+    {
+      "strArea": "Mexican",
+      "flag": "./src/assets/mx.svg"
+    },
+    {
+      "strArea": "Moroccan",
+      "flag": "./src/assets/ma.svg"
+    },
+    {
+      "strArea": "Polish",
+      "flag": "./src/assets/pl.svg"
+    },
+    {
+      "strArea": "Portuguese",
+      "flag": "./src/assets/pt.svg"
+    },
+    {
+      "strArea": "Russian",
+      "flag": "./src/assets/ru.svg"
+    },
+    {
+      "strArea": "Spanish",
+      "flag": "./src/assets/es.svg"
+    },
+    {
+      "strArea": "Thai",
+      "flag": "./src/assets/th.svg"
+    },
+    {
+      "strArea": "Tunisian",
+      "flag": "./src/assets/tn.svg"
+    },
+    {
+      "strArea": "Turkish",
+      "flag": "./src/assets/tr.svg"
+    },
+    {
+      "strArea": "Vietnamese",
+      "flag": "./src/assets/vn.svg"
+    }
+  ]
+}
