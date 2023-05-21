@@ -7,9 +7,12 @@ const MealsByCategory = () => {
   const [meals, setMeals] = useState([]);
 
   const getCategoryByName = async () => {
-    const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${name}`);
-    const data = await res.json();
-    setMeals(data.meals);
+    setMeals([]);
+    try {
+      const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${name}`);
+      const data = await res.json();
+      setMeals(data.meals);
+    } catch (err) {}
   };
 
   useEffect(() => {

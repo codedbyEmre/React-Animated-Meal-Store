@@ -15,21 +15,27 @@ const App = () => {
   const [showSidebar, setShowSidebar] = useState(true);
 
   const getCategories = async () => {
-    const res = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
-    const data = await res.json();
-    setCategories(data.categories);
+    try {
+      const res = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
+      const data = await res.json();
+      setCategories(data.categories);
+    } catch (err) {}
   };
 
   const getAreas = async () => {
-    const res = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list');
-    const data = await res.json();
-    setAreas(data.meals);
+    try {
+      const res = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list');
+      const data = await res.json();
+      setAreas(data.meals);
+    } catch (err) {}
   };
 
   const getIngredients = async () => {
-    const res = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list');
-    const data = await res.json();
-    setIngredients(data.meals);
+    try {
+      const res = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list');
+      const data = await res.json();
+      setIngredients(data.meals);
+    } catch (err) {}
   };
 
   useEffect(() => {

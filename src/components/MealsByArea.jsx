@@ -7,9 +7,12 @@ const MealsByArea = () => {
   const [meals, setMeals] = useState([]);
 
   const getAreaByName = async () => {
-    const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${name}`);
-    const data = await res.json();
-    setMeals(data.meals);
+    setMeals([]);
+    try {
+      const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${name}`);
+      const data = await res.json();
+      setMeals(data.meals);
+    } catch (err) {}
   };
 
   useEffect(() => {

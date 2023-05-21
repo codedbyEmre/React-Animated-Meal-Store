@@ -8,9 +8,11 @@ const MealsByIngredient = () => {
 
   const getCategoryByName = async () => {
     setMeals([]);
-    const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${name}`);
-    const data = await res.json();
-    setMeals(data.meals);
+    try {
+      const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${name}`);
+      const data = await res.json();
+      setMeals(data.meals);
+    } catch (err) {}
   };
 
   useEffect(() => {
