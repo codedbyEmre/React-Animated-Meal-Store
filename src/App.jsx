@@ -20,7 +20,7 @@ const App = () => {
   };
 
   const getAreas = async () => {
-    const res = await fetch('/areas.json');
+    const res = await fetch('/src/data/areas.json');
     const data = await res.json();
     setAreas(data.meals);
   };
