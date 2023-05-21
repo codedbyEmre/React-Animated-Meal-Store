@@ -6,6 +6,7 @@ import MealsByCategory from './components/MealsByCategory';
 import { useState, useEffect } from 'react';
 import MealDetails from './components/MealDetails';
 import MealsByIngredient from './components/MealsByIngredient';
+import MealsByArea from './components/MealsByArea';
 
 const App = () => {
   const [categories, setCategories] = useState([]);
@@ -20,7 +21,7 @@ const App = () => {
   };
 
   const getAreas = async () => {
-    const res = await fetch('/src/data/areas.json');
+    const res = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list');
     const data = await res.json();
     setAreas(data.meals);
   };
@@ -76,6 +77,7 @@ const App = () => {
               <Route path="/category/:name" element={<MealsByCategory />} />
               <Route path="/meal/:id" element={<MealDetails />} />
               <Route path="/ingredient/:name" element={<MealsByIngredient />} />
+              <Route path="/area/:name" element={<MealsByArea />} />
             </Routes>
           </div>
         </div>
@@ -129,10 +131,9 @@ const App = () => {
               <div className="collapse-content">
                 {areas.map((area, index) => (
                   <li className="my-1" key={index}>
-                    <Link className="py-[10px]">
-                      <img className="w-10 rounded-full h-10 object-cover" src={area?.flag} alt={area?.strArea} />
+                    <NavLink to={`/area/${area?.strArea}`} className="py-[10px]">
                       <p className="text-xl ml-1">{area?.strArea}</p>
-                    </Link>
+                    </NavLink>
                   </li>
                 ))}
               </div>
