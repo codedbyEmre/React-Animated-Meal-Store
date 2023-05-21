@@ -16,12 +16,27 @@ const MealsByCategory = () => {
     getCategoryByName();
   }, [name]);
 
+  const mealInfoTextOne = meals.length > 1 ? 'have' : 'has';
+  const mealInfoTextTwo = meals.length > 1 ? 'meals' : 'meal';
+
   return (
-    <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
-      {meals.map((meal, index) => (
-        <Meal meal={meal} index={index} key={meal.idMeal} />
-      ))}
-    </div>
+    <>
+      {meals && meals.length ? (
+        <>
+          <h2 className="text-2xl mb-6 sm:text-left text-center font-semibold">
+            {name} <span className="font-normal">{mealInfoTextOne}</span> {meals.length}
+            <span className="font-normal ml-2">{mealInfoTextTwo}</span>
+          </h2>
+          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
+            {meals.map((meal, index) => (
+              <Meal meal={meal} index={index} key={meal.idMeal} />
+            ))}
+          </div>
+        </>
+      ) : (
+        <h2 className="text-2xl sm:text-left text-center">No meals found</h2>
+      )}
+    </>
   );
 };
 

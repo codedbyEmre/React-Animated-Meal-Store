@@ -101,7 +101,7 @@ const App = () => {
               <input type="checkbox" />
 
               <div className="collapse-title text-xl font-medium flex items-center">
-                <BiCategoryAlt className="mr-2" />
+                <BiCategoryAlt className="mr-3" />
                 Categories
               </div>
               <div className="collapse-content">
@@ -125,7 +125,7 @@ const App = () => {
               <input type="checkbox" />
 
               <div className="collapse-title text-xl font-medium flex items-center">
-                <BiWorld className="mr-2" />
+                <BiWorld className="mr-3" />
                 Areas
               </div>
               <div className="collapse-content">
@@ -144,7 +144,7 @@ const App = () => {
               <input type="checkbox" />
 
               <div className="collapse-title text-xl font-medium flex items-center">
-                <GiMeal className="mr-2" />
+                <GiMeal className="mr-3" />
                 Ingredients
               </div>
               <div className="collapse-content">
