@@ -20,28 +20,19 @@ const ViewHome = () => {
 
   return (
     <>
-      <div className="text-4xl font-medium mt-6">
-        <motion.i
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ type: 'tween', duration: 0.75, delay: 0.35, ease: [0.25, 0.25, 0.25, 0.75] }}
-          className="text-primary text-6xl mb-2"
-        >
-          Nourish Your Palate
-        </motion.i>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ type: 'tween', duration: 0.75, delay: 0.55, ease: [0.25, 0.25, 0.25, 0.75] }}
-          className="mt-2"
-        >
-          Discover the Perfect Blend of Flavor and Efficiency
-        </motion.p>
-      </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ type: 'tween', duration: 1, delay: 0.35, ease: [0.25, 0.25, 0.25, 0.75] }}
+        className="text-4xl font-medium mt-6"
+      >
+        <i className="text-primary text-6xl mb-2">Nourish Your Palate</i>
+        <p className="mt-2">Discover the Perfect Blend of Flavor and Efficiency</p>
+      </motion.div>
       <motion.div
         initial={{ opacity: 0, translateY: '-1rem' }}
         animate={{ opacity: 1, translateY: '0' }}
-        transition={{ type: 'tween', duration: 0.75, delay: 0.75, ease: [0.25, 0.25, 0.25, 0.75] }}
+        transition={{ type: 'tween', duration: 1, delay: 0.75, ease: [0.25, 0.25, 0.25, 0.75] }}
         className="card lg:card-side bg-base-100 shadow-xl lg:h-[25rem] mt-16"
       >
         {/* Meal Image */}
@@ -59,7 +50,7 @@ const ViewHome = () => {
             Area: <span className="font-semibold">{meal?.strArea}</span>
           </p>
           {/* Instructions */}
-          <h2 className="font-semibold mt-3 mb-1 text-lg">Instructions</h2>
+          <h2 className="font-semibold mt-4 mb-1 text-lg">Instructions</h2>
           <p className="line-clamp-4">{meal?.strInstructions}</p>
           {/* View More Btn */}
           <button className="btn btn-primary mt-6">
