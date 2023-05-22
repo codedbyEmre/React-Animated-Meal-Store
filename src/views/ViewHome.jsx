@@ -53,9 +53,9 @@ const ViewHome = () => {
           <h2 className="font-semibold mt-4 mb-1 text-lg">Instructions</h2>
           <p className="line-clamp-4">{meal?.strInstructions}</p>
           {/* View More Btn */}
-          <button className="btn btn-primary mt-6">
-            <Link to={`/meal/${meal.idMeal}`}>View Detail</Link>
-          </button>
+          <Link to={`/meal/${meal.idMeal}`}>
+            <button className="btn btn-primary mt-6">View Detail</button>
+          </Link>
         </div>
       </motion.div>
     </>
