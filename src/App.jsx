@@ -140,7 +140,7 @@ const App = () => {
               </div>
             </div>
             <h2 className="mt-3 font-semibold text-xl">Emre Süslü</h2>
-            <p className="text-base">Gourmet</p>
+            <p className="text-base">Executive Chef</p>
           </div>
 
           {/* Categories */}
