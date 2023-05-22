@@ -40,7 +40,9 @@ const App = () => {
     'night',
     'coffee'
   ];
-  const [theme, setTheme] = useState('winter');
+  const [theme, setTheme] = useState('');
+  const storedTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'winter';
+
   const [categories, setCategories] = useState([]);
   const [areas, setAreas] = useState([]);
   const [ingredients, setIngredients] = useState([]);
@@ -81,8 +83,6 @@ const App = () => {
     getIngredients();
   }, []);
 
-  const storedTheme = localStorage.getItem('theme');
-
   return (
     <div className="drawer drawer-mobile bg-base-200" data-theme={storedTheme}>
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -97,7 +97,9 @@ const App = () => {
           {/* Select theme */}
           <select
             onChange={handleThemeChange}
-            className="select select-bordered w-full sm:max-w-[10rem] max-w-[7rem] capitalize"
+            value={localStorage.getItem('theme')}
+            selected
+            className="select select-bordered w-full sm:max-w-[10rem] max-w-[7rem] capitalize lg:mr-4 mr-0"
           >
             {themes.map((theme, index) => (
               <option key={index}>{theme}</option>
