@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useParams } from 'react-router-dom';
 // icons
@@ -67,10 +68,16 @@ const MealDetails = () => {
         </p>
         {/* Category and Area */}
         <p>
-          Category: <span className="font-semibold">{meal?.strCategory}</span>
+          Category:
+          <Link to={`/category/${meal?.strCategory}`} className="ml-1 font-semibold">
+            {meal?.strCategory}
+          </Link>
         </p>
         <p className="mt-1">
-          Area: <span className="font-semibold">{meal?.strArea}</span>
+          Area:
+          <Link to={`/area/${meal?.strArea}`} className="ml-1 font-semibold">
+            {meal?.strArea}
+          </Link>
         </p>
         {/* Instructions */}
         <h2 className="font-semibold mt-3 mb-1 text-lg">Instructions</h2>

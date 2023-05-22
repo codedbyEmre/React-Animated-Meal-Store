@@ -44,10 +44,16 @@ const ViewHome = () => {
           <h2 className="card-title text-4xl line-clamp-1 mb-6">{meal?.strMeal}</h2>
           {/* Category and Area */}
           <p>
-            Category: <span className="font-semibold">{meal?.strCategory}</span>
+            Category:
+            <Link to={`/category/${meal?.strCategory}`} className="ml-1 font-semibold">
+              {meal?.strCategory}
+            </Link>
           </p>
           <p className="mt-1">
-            Area: <span className="font-semibold">{meal?.strArea}</span>
+            Area:
+            <Link to={`/area/${meal?.strArea}`} className="ml-1 font-semibold">
+              {meal?.strArea}
+            </Link>
           </p>
           {/* Instructions */}
           <h2 className="font-semibold mt-4 mb-1 text-lg">Instructions</h2>

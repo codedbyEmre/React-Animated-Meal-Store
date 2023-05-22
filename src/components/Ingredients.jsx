@@ -19,7 +19,7 @@ const Ingredients = ({ meal }) => {
     if (ingredient && measurement) {
       ingredients.push(
         <Link to={`/ingredient/${ingredient}`} key={i}>
-          <li className="flex flex-col items-center text-center p-3">
+          <li className="flex flex-col items-center text-center p-3 hover:-translate-y-2 transition-all">
             {getImageByIngredient(ingredient)}
             <p className="font-medium">{ingredient}</p>
             <p>{measurement}</p>
