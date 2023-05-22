@@ -9,6 +9,38 @@ import MealsByIngredient from './components/MealsByIngredient';
 import MealsByArea from './components/MealsByArea';
 
 const App = () => {
+  const themes = [
+    'winter',
+    'light',
+    'dark',
+    'cupcake',
+    'bumblebee',
+    'emerald',
+    'corporate',
+    'synthwave',
+    'retro',
+    'cyberpunk',
+    'valentine',
+    'halloween',
+    'garden',
+    'forest',
+    'aqua',
+    'lofi',
+    'pastel',
+    'fantasy',
+    'wireframe',
+    'black',
+    'luxury',
+    'dracula',
+    'cmyk',
+    'autumn',
+    'business',
+    'acid',
+    'lemonade',
+    'night',
+    'coffee'
+  ];
+  const [theme, setTheme] = useState('winter');
   const [categories, setCategories] = useState([]);
   const [areas, setAreas] = useState([]);
   const [ingredients, setIngredients] = useState([]);
@@ -37,26 +69,43 @@ const App = () => {
     } catch (err) {}
   };
 
+  const handleThemeChange = e => {
+    const themeValue = e.target.value;
+    localStorage.setItem('theme', themeValue);
+    setTheme(themeValue);
+  };
+
   useEffect(() => {
     getCategories();
     getAreas();
     getIngredients();
   }, []);
 
+  const storedTheme = localStorage.getItem('theme');
+
   return (
-    <div className="drawer drawer-mobile bg-base-200">
+    <div className="drawer drawer-mobile bg-base-200" data-theme={storedTheme}>
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content bg-slate-200">
-        <nav className="navbar bg-base-100 shadow-lg">
-          <div className="flex-1">
-            <Link to="/" className="btn btn-ghost normal-case text-3xl ml-2">
+      <div className="drawer-content bg-base-300">
+        <nav className="navbar bg-base-100 shadow-lg border border-l-2 border-t-0 border-base-300">
+          <div className="flex-1 sm:ml-0 -ml-4">
+            <Link to="/" className="btn btn-ghost text-base-0 normal-case sm:text-3xl text-2xl ml-2">
               <span className="text-primary">Meal</span>
               Store
             </Link>
           </div>
-          <div className="flex-none">
+          {/* Select theme */}
+          <select
+            onChange={handleThemeChange}
+            className="select select-bordered w-full sm:max-w-[10rem] max-w-[7rem] capitalize"
+          >
+            {themes.map((theme, index) => (
+              <option key={index}>{theme}</option>
+            ))}
+          </select>
+          <div className="flex-none sm:ml-2 ml-1">
             {/* Hamburger menu */}
-            <label htmlFor="my-drawer" className="btn btn-ghost drawer-button mr-2 cursor-pointer lg:hidden">
+            <label htmlFor="my-drawer" className="btn btn-ghost drawer-button sm:mr-2 mr-0 cursor-pointer lg:hidden">
               <svg
                 xmlns="http:www.w3.org/2000/svg"
                 fill="none"
@@ -69,7 +118,7 @@ const App = () => {
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
           </div>
         </nav>
-        <div className="max-w-8xl mx-auto p-8">
+        <div className="max-w-8xl mx-auto sm:p-8 p-4">
           <Routes>
             <Route path="/" element={<ViewHome />} />
             <Route path="/category/:name" element={<MealsByCategory />} />
@@ -82,16 +131,16 @@ const App = () => {
       <div className="drawer-side">
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 bg-base-100 text-base-content">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center pt-2 mb-6">
             <div className="avatar">
               <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                 <img src="https://avatars.githubusercontent.com/u/67799995?s=400&u=0c3fa793a6479ecc176433d53193b01e6a2f6a58&v=4" />
               </div>
             </div>
-            <h2 className="mt-2 font-semibold text-xl text-gray-700">Emre Süslü</h2>
-            <p className="text-gray-600 text-base">Gourmet</p>
+            <h2 className="mt-3 font-semibold text-xl">Emre Süslü</h2>
+            <p className="text-base">Gourmet</p>
           </div>
-          <div className="divider mb-0 mt-2"></div>
+
           {/* Categories */}
           <div tabIndex={0} className="collapse collapse-arrow">
             <input type="checkbox" />
@@ -115,7 +164,6 @@ const App = () => {
               ))}
             </div>
           </div>
-          <hr />
           {/* Areas */}
           <div tabIndex={0} className="collapse collapse-arrow">
             <input type="checkbox" />
@@ -134,7 +182,6 @@ const App = () => {
               ))}
             </div>
           </div>
-          <hr />
           {/* Ingredients */}
           <div tabIndex={0} className="collapse collapse-arrow">
             <input type="checkbox" />
