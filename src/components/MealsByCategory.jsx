@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Meal from './Meal';
+import Meal from './Meal/Meal';
 
 const MealsByCategory = () => {
   const { name } = useParams();

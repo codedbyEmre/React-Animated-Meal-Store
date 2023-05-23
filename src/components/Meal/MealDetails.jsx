@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 // icons
 import { FaYoutube, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { AiOutlineLink } from 'react-icons/ai';
-
 import Ingredients from './Ingredients';
 
 const MealDetails = () => {

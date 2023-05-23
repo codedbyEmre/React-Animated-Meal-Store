@@ -1,12 +1,8 @@
-import { Link, NavLink, Route, Routes } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import Index from './routes/Index';
 import { BiCategoryAlt, BiWorld } from 'react-icons/bi';
 import { GiMeal } from 'react-icons/gi';
-import ViewHome from './views/ViewHome';
-import MealsByCategory from './components/MealsByCategory';
 import { useState, useEffect } from 'react';
-import MealDetails from './components/MealDetails';
-import MealsByIngredient from './components/MealsByIngredient';
-import MealsByArea from './components/MealsByArea';
 
 const App = () => {
   const themes = [
@@ -121,13 +117,8 @@ const App = () => {
           </div>
         </nav>
         <div className="max-w-8xl mx-auto sm:p-8 p-4">
-          <Routes>
-            <Route path="/" element={<ViewHome />} />
-            <Route path="/category/:name" element={<MealsByCategory />} />
-            <Route path="/meal/:id" element={<MealDetails />} />
-            <Route path="/ingredient/:name" element={<MealsByIngredient />} />
-            <Route path="/area/:name" element={<MealsByArea />} />
-          </Routes>
+          {/* Routes */}
+          <Index />
         </div>
       </div>
       <div className="drawer-side">
