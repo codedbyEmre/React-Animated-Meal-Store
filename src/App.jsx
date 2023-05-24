@@ -127,25 +127,30 @@ const App = () => {
       <aside className="drawer-side">
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 bg-base-100 text-base-content">
-          <div className="flex flex-col items-center pt-2 mb-6">
+          {/* Profile section */}
+          <section className="flex flex-col items-center pt-2 mb-6">
             <div className="avatar">
               <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src="https://avatars.githubusercontent.com/u/67799995?s=400&u=0c3fa793a6479ecc176433d53193b01e6a2f6a58&v=4" />
+                <img
+                  src="https://avatars.githubusercontent.com/u/67799995?s=400&u=0c3fa793a6479ecc176433d53193b01e6a2f6a58&v=4"
+                  alt="Emre Süslü"
+                />
               </div>
             </div>
             <h2 className="mt-3 font-semibold text-xl">Emre Süslü</h2>
             <p className="text-base">Executive Chef</p>
-          </div>
+          </section>
 
           {/* Categories */}
           <section tabIndex={0} className="collapse collapse-arrow">
-            <input type="checkbox" />
+            <input id="checkbox" type="checkbox" />
+            <label htmlFor="checkbox"></label>
 
             <div className="collapse-title text-xl font-medium flex items-center">
               <BiCategoryAlt className="mr-3" />
               Categories
             </div>
-            <div className="collapse-content">
+            <ul className="collapse-content">
               {categories.map((category, index) => (
                 <li className="my-1" key={index}>
                   <NavLink to={`/category/${category?.strCategory}`} className="py-[10px]">
@@ -158,17 +163,18 @@ const App = () => {
                   </NavLink>
                 </li>
               ))}
-            </div>
+            </ul>
           </section>
           {/* Areas */}
           <section tabIndex={0} className="collapse collapse-arrow">
-            <input type="checkbox" />
+            <input id="checkbox" type="checkbox" />
+            <label htmlFor="checkbox"></label>
 
             <div className="collapse-title text-xl font-medium flex items-center">
               <BiWorld className="mr-3" />
               Areas
             </div>
-            <div className="collapse-content">
+            <ul className="collapse-content">
               {areas.map((area, index) => (
                 <li className="my-1" key={index}>
                   <NavLink to={`/area/${area?.strArea}`} className="py-[10px]">
@@ -176,17 +182,18 @@ const App = () => {
                   </NavLink>
                 </li>
               ))}
-            </div>
+            </ul>
           </section>
           {/* Ingredients */}
           <section tabIndex={0} className="collapse collapse-arrow">
-            <input type="checkbox" />
+            <input id="checkbox" type="checkbox" />
+            <label htmlFor="checkbox"></label>
 
             <div className="collapse-title text-xl font-medium flex items-center">
               <GiMeal className="mr-3" />
               Ingredients
             </div>
-            <div className="collapse-content">
+            <ul className="collapse-content">
               {ingredients.map((ingredient, index) => (
                 <li className="my-1" key={index}>
                   <NavLink to={`/ingredient/${ingredient?.strIngredient}`} className="py-[10px]">
@@ -199,7 +206,7 @@ const App = () => {
                   </NavLink>
                 </li>
               ))}
-            </div>
+            </ul>
           </section>
         </ul>
       </aside>
