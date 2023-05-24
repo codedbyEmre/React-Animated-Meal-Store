@@ -43,8 +43,8 @@ const MealDetails = () => {
       {/* Meal Details */}
       <div className="flex-1 p-8">
         <h2 className="card-title text-4xl">{meal?.strMeal}</h2>
-        {/* Links */}
-        <p className="flex my-3">
+        {/* Source and Youtube */}
+        <p className="flex gap-4 my-3">
           {meal?.strSource ? (
             <span className="cursor-pointer">
               <a href={meal?.strSource} target="_blank">
@@ -56,7 +56,7 @@ const MealDetails = () => {
           )}
 
           {meal?.strYoutube ? (
-            <span className="ml-3 cursor-pointer">
+            <span className="cursor-pointer">
               <a href={meal?.strYoutube} target="_blank">
                 <FaYoutube color="#FF0000" size="24px" />
               </a>

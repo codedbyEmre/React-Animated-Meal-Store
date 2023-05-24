@@ -143,7 +143,7 @@ const App = () => {
 
           {/* Categories */}
           <section tabIndex={0} className="collapse collapse-arrow">
-            <input id="checkbox" type="checkbox" />
+            <input id="checkbox" type="checkbox" name="checkbox" aria-labelledby="categories" />
             <label htmlFor="checkbox"></label>
 
             <div className="collapse-title text-xl font-medium flex items-center">
@@ -167,7 +167,7 @@ const App = () => {
           </section>
           {/* Areas */}
           <section tabIndex={0} className="collapse collapse-arrow">
-            <input id="checkbox" type="checkbox" />
+            <input id="checkbox" type="checkbox" name="checkbox" aria-labelledby="areas" />
             <label htmlFor="checkbox"></label>
 
             <div className="collapse-title text-xl font-medium flex items-center">
@@ -186,7 +186,7 @@ const App = () => {
           </section>
           {/* Ingredients */}
           <section tabIndex={0} className="collapse collapse-arrow">
-            <input id="checkbox" type="checkbox" />
+            <input id="checkbox" type="checkbox" name="checkbox" aria-labelledby="ingredients" />
             <label htmlFor="checkbox"></label>
 
             <div className="collapse-title text-xl font-medium flex items-center">
