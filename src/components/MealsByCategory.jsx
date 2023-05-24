@@ -35,11 +35,11 @@ const MealsByCategory = () => {
           <h2 className="text-2xl mb-6 sm:text-left text-center font-semibold">
             {meals.length} <span className="font-normal">{mealInfoText}</span> {name}
           </h2>
-          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
+          <section className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
             {meals.map((meal, index) => (
               <Meal meal={meal} index={index} key={meal.idMeal} />
             ))}
-          </div>
+          </section>
         </>
       ) : (
         <h2 className="text-2xl sm:text-left text-center">No meals found</h2>

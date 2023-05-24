@@ -1,8 +1,11 @@
+// hooks
+import { useState, useEffect } from 'react';
+// routing
 import { Link, NavLink } from 'react-router-dom';
 import Index from './routes/Index';
+// icons
 import { BiCategoryAlt, BiWorld } from 'react-icons/bi';
 import { GiMeal } from 'react-icons/gi';
-import { useState, useEffect } from 'react';
 
 const App = () => {
   const themes = [
@@ -80,7 +83,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="drawer drawer-mobile bg-base-200" data-theme={storedTheme}>
+    <section className="drawer drawer-mobile bg-base-200" data-theme={storedTheme}>
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content bg-base-300">
         <nav className="navbar bg-base-100 shadow-lg border border-l-2 border-t-0 border-base-300">
@@ -116,12 +119,12 @@ const App = () => {
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
           </div>
         </nav>
-        <div className="max-w-8xl mx-auto sm:p-8 p-4">
+        <main className="max-w-8xl mx-auto sm:p-8 p-4">
           {/* Routes */}
           <Index />
-        </div>
+        </main>
       </div>
-      <div className="drawer-side">
+      <aside className="drawer-side">
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 bg-base-100 text-base-content">
           <div className="flex flex-col items-center pt-2 mb-6">
@@ -135,7 +138,7 @@ const App = () => {
           </div>
 
           {/* Categories */}
-          <div tabIndex={0} className="collapse collapse-arrow">
+          <section tabIndex={0} className="collapse collapse-arrow">
             <input type="checkbox" />
 
             <div className="collapse-title text-xl font-medium flex items-center">
@@ -156,9 +159,9 @@ const App = () => {
                 </li>
               ))}
             </div>
-          </div>
+          </section>
           {/* Areas */}
-          <div tabIndex={0} className="collapse collapse-arrow">
+          <section tabIndex={0} className="collapse collapse-arrow">
             <input type="checkbox" />
 
             <div className="collapse-title text-xl font-medium flex items-center">
@@ -174,9 +177,9 @@ const App = () => {
                 </li>
               ))}
             </div>
-          </div>
+          </section>
           {/* Ingredients */}
-          <div tabIndex={0} className="collapse collapse-arrow">
+          <section tabIndex={0} className="collapse collapse-arrow">
             <input type="checkbox" />
 
             <div className="collapse-title text-xl font-medium flex items-center">
@@ -197,10 +200,10 @@ const App = () => {
                 </li>
               ))}
             </div>
-          </div>
+          </section>
         </ul>
-      </div>
-    </div>
+      </aside>
+    </section>
   );
 };
 

@@ -8,6 +8,7 @@ React Router 6
 Framer Motion
 Tailwind
 Daisy UI
+Vite
 ```
 
 The API used on this project can be found <a href="https://www.themealdb.com/" target="_blank">here</a>

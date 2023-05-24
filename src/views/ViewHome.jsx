@@ -20,7 +20,7 @@ const ViewHome = () => {
 
   return (
     <>
-      <motion.div
+      <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ type: 'tween', duration: 1, delay: 0.35, ease: [0.25, 0.25, 0.25, 0.75] }}
@@ -28,8 +28,8 @@ const ViewHome = () => {
       >
         <i className="text-primary text-6xl mb-2">Nourish Your Palate</i>
         <p className="mt-2">Discover the Perfect Blend of Flavor and Efficiency</p>
-      </motion.div>
-      <motion.div
+      </motion.section>
+      <motion.section
         initial={{ opacity: 0, translateY: '-1rem' }}
         animate={{ opacity: 1, translateY: '0' }}
         transition={{ type: 'tween', duration: 1, delay: 0.75, ease: [0.25, 0.25, 0.25, 0.75] }}
@@ -63,7 +63,7 @@ const ViewHome = () => {
             <button className="btn btn-primary mt-6">View Detail</button>
           </Link>
         </div>
-      </motion.div>
+      </motion.section>
     </>
   );
 };
