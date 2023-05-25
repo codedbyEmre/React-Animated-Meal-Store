@@ -93,7 +93,7 @@ const App = () => {
               Store
             </Link>
           </div>
-          {/* Select theme */}
+          {/* Theme selection */}
           <select
             onChange={handleThemeChange}
             value={localStorage.getItem('theme')}
@@ -126,9 +126,9 @@ const App = () => {
       </div>
       <aside className="drawer-side">
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 bg-base-100 text-base-content">
+        <ul className="menu p-4 sm:w-80 w-64 bg-base-100 text-base-content">
           {/* Profile section */}
-          <section className="flex flex-col items-center pt-2 mb-6">
+          <section className="flex flex-col items-center pt-2 mb-4">
             <div className="avatar">
               <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                 <img
@@ -141,12 +141,14 @@ const App = () => {
             <p className="text-base">Executive Chef</p>
           </section>
 
-          {/* Categories */}
+          <hr className="mb-2" />
+
+          {/* Category Links */}
           <section tabIndex={0} className="collapse collapse-arrow">
             <input id="checkbox" type="checkbox" name="checkbox" aria-labelledby="categories" />
             <label htmlFor="checkbox"></label>
 
-            <div className="collapse-title text-xl font-medium flex items-center">
+            <div className="collapse-title sm:text-xl text-lg font-medium flex items-center">
               <BiCategoryAlt className="mr-3" />
               Categories
             </div>
@@ -155,22 +157,22 @@ const App = () => {
                 <li className="my-1" key={index}>
                   <NavLink to={`/category/${category?.strCategory}`} className="py-[10px]">
                     <img
-                      className="w-10 rounded-full h-10 object-cover"
+                      className="sm:w-10 sm:h-10 w-8 h-8 rounded-full object-cover"
                       src={category?.strCategoryThumb}
                       alt={category?.strCategory}
                     />
-                    <p className="text-xl ml-1">{category?.strCategory}</p>
+                    <p className="sm:text-xl text-lg ml-1">{category?.strCategory}</p>
                   </NavLink>
                 </li>
               ))}
             </ul>
           </section>
-          {/* Areas */}
+          {/* Area Link */}
           <section tabIndex={0} className="collapse collapse-arrow">
             <input id="checkbox" type="checkbox" name="checkbox" aria-labelledby="areas" />
             <label htmlFor="checkbox"></label>
 
-            <div className="collapse-title text-xl font-medium flex items-center">
+            <div className="collapse-title sm:text-xl text-lg  font-medium flex items-center">
               <BiWorld className="mr-3" />
               Areas
             </div>
@@ -178,18 +180,18 @@ const App = () => {
               {areas.map((area, index) => (
                 <li className="my-1" key={index}>
                   <NavLink to={`/area/${area?.strArea}`} className="py-[10px]">
-                    <p className="text-xl ml-1">{area?.strArea}</p>
+                    <p className="sm:text-xl text-lg ml-1">{area?.strArea}</p>
                   </NavLink>
                 </li>
               ))}
             </ul>
           </section>
-          {/* Ingredients */}
+          {/* Ingredient Links */}
           <section tabIndex={0} className="collapse collapse-arrow">
             <input id="checkbox" type="checkbox" name="checkbox" aria-labelledby="ingredients" />
             <label htmlFor="checkbox"></label>
 
-            <div className="collapse-title text-xl font-medium flex items-center">
+            <div className="collapse-title sm:text-xl text-lg font-medium flex items-center">
               <GiMeal className="mr-3" />
               Ingredients
             </div>
@@ -198,11 +200,11 @@ const App = () => {
                 <li className="my-1" key={index}>
                   <NavLink to={`/ingredient/${ingredient?.strIngredient}`} className="py-[10px]">
                     <img
-                      className="w-10 rounded-full h-10 object-cover"
+                      className="sm:w-10 sm:h-10 w-8 h-8 rounded-full object-cover"
                       src={`https://www.themealdb.com/images/ingredients/${ingredient?.strIngredient}-Small.png`}
                       alt={ingredient?.strIngredient}
                     />
-                    <p className="text-xl ml-1">{ingredient?.strIngredient}</p>
+                    <p className="sm:text-xl text-lg ml-1">{ingredient?.strIngredient}</p>
                   </NavLink>
                 </li>
               ))}
