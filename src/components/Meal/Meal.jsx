@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Meal = ({ meal, index }) => {
   return (
-    <Link to={`/meal/${meal.idMeal}`}>
+    <Link to={`/meal/${meal.idMeal}`} className="hover:scale-105 transition-all duration-[250ms]">
       <motion.article
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
