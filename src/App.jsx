@@ -50,7 +50,8 @@ const App = () => {
     try {
       const res = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
       const data = await res.json();
-      setCategories(data.categories);
+      const sortedCategories = data.categories.sort((a, b) => a.strCategory.localeCompare(b.strCategory));
+      setCategories(sortedCategories);
     } catch (err) {}
   };
 
@@ -58,7 +59,8 @@ const App = () => {
     try {
       const res = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list');
       const data = await res.json();
-      setAreas(data.meals);
+      const sortedAreas = data.meals.sort((a, b) => a.strArea.localeCompare(b.strArea));
+      setAreas(sortedAreas);
     } catch (err) {}
   };
 
@@ -66,7 +68,8 @@ const App = () => {
     try {
       const res = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list');
       const data = await res.json();
-      setIngredients(data.meals);
+      const sortedIngredients = data.meals.sort((a, b) => a.strIngredient.localeCompare(b.strIngredient));
+      setIngredients(sortedIngredients);
     } catch (err) {}
   };
 
@@ -96,8 +99,7 @@ const App = () => {
           {/* Theme selection */}
           <select
             onChange={handleThemeChange}
-            value={localStorage.getItem('theme')}
-            selected
+            value={storedTheme}
             className="select select-bordered w-full sm:max-w-[10rem] max-w-[7rem] capitalize lg:mr-4 mr-0"
           >
             {themes.map((theme, index) => (
