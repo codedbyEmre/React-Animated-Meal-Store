@@ -102,7 +102,10 @@ const App = () => {
             value={storedTheme}
             className="select select-bordered w-full sm:max-w-[10rem] max-w-[7rem] capitalize lg:mr-4 mr-0"
           >
-            {themes.map((theme, index) => (
+            <option disabled selected>
+              Select theme
+            </option>
+            {themes.sort().map((theme, index) => (
               <option key={index}>{theme}</option>
             ))}
           </select>
