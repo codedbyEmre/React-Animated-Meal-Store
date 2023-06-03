@@ -102,9 +102,6 @@ const App = () => {
             value={storedTheme}
             className="select select-bordered w-full sm:max-w-[10rem] max-w-[7rem] capitalize lg:mr-4 mr-0"
           >
-            <option disabled selected>
-              Select theme
-            </option>
             {themes.sort().map((theme, index) => (
               <option key={index}>{theme}</option>
             ))}
@@ -121,7 +118,6 @@ const App = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
               </svg>
             </label>
-            <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
           </div>
         </nav>
         <main className="max-w-8xl mx-auto sm:p-8 p-4">
