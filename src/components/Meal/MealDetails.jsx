@@ -83,7 +83,7 @@ const MealDetails = () => {
         <p className={`${seeMoreOrLess ? 'line-clamp-3' : ''}`}>{meal?.strInstructions}</p>
         <button onClick={handleSeeMoreOrLess} className="font-medium flex items-center mt-1">
           {seeMoreOrLess ? <FaChevronDown className="mr-1" /> : <FaChevronUp className="mr-1" />}
-          {seeMoreOrLess ? 'Read more' : 'Read less'}
+          {seeMoreOrLess ? 'See more' : 'See less'}
         </button>
         {/* Ingredients */}
         <h2 className="font-semibold mt-3 mb-1 text-lg">Ingredients</h2>
