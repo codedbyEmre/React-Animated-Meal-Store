@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.error,
+.loading {
+  @apply text-center text-primary text-xl font-medium;
+}
