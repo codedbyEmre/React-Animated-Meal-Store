@@ -1,31 +1,16 @@
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import useFetchMeals from '../hooks/useFetchMeals';
 
 const ViewHome = () => {
-  const [meal, setMeal] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const getMeal = async () => {
-    try {
-      const res = await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`);
-      if (res.ok) {
-        const data = await res.json();
-        setMeal(data.meals[0]);
-      } else {
-        throw Error('Sorry, could not get meal informations from the source');
-      }
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getMeal();
-  }, []);
+  const {
+    data: meal,
+    loading,
+    error
+  } = useFetchMeals(
+    'https://www.themealdb.com/api/json/v1/1/random.php',
+    'Sorry, could not get meal informations from the source'
+  );
 
   return (
     <>
