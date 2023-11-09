@@ -37,8 +37,8 @@ const MealDetails = () => {
       animate={{ opacity: 1, translateY: '0' }}
       transition={{ type: 'tween', duration: 0.75, delay: 0.25, ease: [0.25, 0.25, 0.25, 0.75] }}
     >
-      <button onClick={() => navigate(-1)} className="btn btn-primary mb-6 capitalize tracking-wide">
-        <BiArrowBack size="20px" className="mr-1" />
+      <button onClick={() => navigate(-1)} className="btn btn-primary mb-6 capitalize tracking-wide btn-sm h-10">
+        <BiArrowBack size="18px" className="mr-1" />
         Back
       </button>
 

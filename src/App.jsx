@@ -6,39 +6,11 @@ import Index from './routes/Index';
 // icons
 import { BiCategoryAlt, BiWorld } from 'react-icons/bi';
 import { GiMeal } from 'react-icons/gi';
+import { themeArrays } from './modules/themeArr';
+
+const { themes } = themeArrays();
 
 const App = () => {
-  const themes = [
-    'winter',
-    'light',
-    'dark',
-    'cupcake',
-    'bumblebee',
-    'emerald',
-    'corporate',
-    'synthwave',
-    'retro',
-    'cyberpunk',
-    'valentine',
-    'halloween',
-    'garden',
-    'forest',
-    'aqua',
-    'lofi',
-    'pastel',
-    'fantasy',
-    'wireframe',
-    'black',
-    'luxury',
-    'dracula',
-    'cmyk',
-    'autumn',
-    'business',
-    'acid',
-    'lemonade',
-    'night',
-    'coffee'
-  ];
   const [theme, setTheme] = useState('');
   const storedTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'winter';
 
@@ -125,6 +97,8 @@ const App = () => {
           <Index />
         </main>
       </div>
+
+      {/* Sidebar */}
       <aside className="drawer-side">
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
         <ul className="menu p-4 sm:w-80 w-64 bg-base-100 text-base-content">
