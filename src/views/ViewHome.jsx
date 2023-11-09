@@ -12,6 +12,25 @@ const ViewHome = () => {
     'Sorry, could not get meal informations from the source'
   );
 
+  const headlines = [
+    'Nourish Your Palate',
+    'Ignite Culinary Delight',
+    'Stimulate Your Taste Buds',
+    'Revel in Gourmet Delights'
+  ];
+
+  const getRandomHeadline = headlines[Math.floor(Math.random() * headlines.length)];
+
+  const subtitles = [
+    'Discover the Perfect Blend of Flavor and Efficiency',
+    'Uncover Flavorful Efficiency in Every Blend',
+    'Embrace the Perfect Balance of Flavor and Efficiency',
+    'Encounter the Harmony of Flavor and Operational Excellence',
+    'Find the Ideal Fusion of Taste and Productivity'
+  ];
+
+  const getRandomSubtitle = subtitles[Math.floor(Math.random() * subtitles.length)];
+
   return (
     <>
       {error && <div className="error">{error}</div>}
@@ -24,8 +43,8 @@ const ViewHome = () => {
             transition={{ type: 'tween', duration: 1, delay: 0.35, ease: [0.25, 0.25, 0.25, 0.75] }}
             className="text-4xl font-medium mt-6"
           >
-            <i className="text-primary text-6xl mb-2">Nourish Your Palate</i>
-            <p className="mt-2">Discover the Perfect Blend of Flavor and Efficiency</p>
+            <i className="text-primary text-6xl mb-2">{getRandomHeadline}</i>
+            <p className="mt-2">{getRandomSubtitle}</p>
           </motion.section>
           <motion.section
             initial={{ opacity: 0, translateY: '-1rem' }}

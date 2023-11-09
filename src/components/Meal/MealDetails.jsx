@@ -91,7 +91,7 @@ const MealDetails = () => {
               {meal.strTags && (
                 <p className="mt-1">
                   Tags:
-                  <span className="ml-1 font-semibold">{meal.strTags}</span>
+                  <span className="ml-1 font-semibold break-words">{meal.strTags}</span>
                 </p>
               )}
               {/* Instructions */}
