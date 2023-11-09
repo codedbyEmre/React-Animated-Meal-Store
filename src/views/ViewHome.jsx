@@ -41,16 +41,16 @@ const ViewHome = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ type: 'tween', duration: 1, delay: 0.35, ease: [0.25, 0.25, 0.25, 0.75] }}
-            className="text-4xl font-medium mt-6"
+            className="font-medium mt-6"
           >
-            <i className="text-primary text-6xl mb-2">{getRandomHeadline}</i>
-            <p className="mt-2">{getRandomSubtitle}</p>
+            <i className="text-primary md:text-6xl sm:text-5xl text-4xl mb-2">{getRandomHeadline}</i>
+            <p className="mt-2 md:text-4xl sm:text-3xl text-2xl">{getRandomSubtitle}</p>
           </motion.section>
           <motion.section
             initial={{ opacity: 0, translateY: '-1rem' }}
             animate={{ opacity: 1, translateY: '0' }}
             transition={{ type: 'tween', duration: 1, delay: 0.75, ease: [0.25, 0.25, 0.25, 0.75] }}
-            className="card lg:card-side bg-base-100 shadow-xl lg:h-[25rem] mt-16"
+            className="card lg:card-side bg-base-100 shadow-xl lg:h-[25rem] lg:mt-16 mt-10"
           >
             {/* Meal Image */}
             <figure className="flex-1">
