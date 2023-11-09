@@ -47,15 +47,15 @@ The API used on this project can be found <a href="https://www.themealdb.com/" t
 
 #
 
-![9](https://github.com/codedbyEmre/React-Animated-Meal-Store/assets/67799995/49ebaf31-8320-46a0-9923-c8a4309d5ca9){ width=50% }
+![9](https://github.com/codedbyEmre/Mern-Flora-Companion/assets/67799995/b016b753-39da-4386-b4d7-90162b9853fd)
 
 #
 
-![10](https://github.com/codedbyEmre/Mern-Flora-Companion/assets/67799995/84e032e6-01f5-4880-a6ed-3e640fdedda5){ width=50% }
+![10](https://github.com/codedbyEmre/Mern-Flora-Companion/assets/67799995/84e032e6-01f5-4880-a6ed-3e640fdedda5)
 
 #
 
-![11](https://github.com/codedbyEmre/React-Animated-Meal-Store/assets/67799995/75e70690-9a7b-454b-983d-34645d4158bf){ width=50% }
+![11](https://github.com/codedbyEmre/Mern-Flora-Companion/assets/67799995/f2d79ea3-bb67-48f5-87ab-e56c6ba58030)
 
 ## Project Setup
 
