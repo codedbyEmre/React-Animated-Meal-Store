@@ -46,7 +46,12 @@ const MealDetails = () => {
             {/* Meal Image */}
             {meal.strMealThumb && (
               <figure className="flex-1">
-                <img src={meal.strMealThumb} alt={meal?.strMeal} className="w-full h-full object-cover" />
+                <img
+                  src={meal.strMealThumb}
+                  alt={meal?.strMeal}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </figure>
             )}
             {/* Meal Details */}

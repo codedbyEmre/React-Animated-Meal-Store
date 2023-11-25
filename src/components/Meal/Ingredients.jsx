@@ -9,6 +9,7 @@ const Ingredients = ({ meal }) => {
         className="mb-2 w-16 h-16 object-cover"
         src={`https://www.themealdb.com/images/ingredients/${name}-Small.png`}
         alt={name}
+        loading="lazy"
       />
     );
   };

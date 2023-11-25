@@ -109,6 +109,7 @@ const App = () => {
                 <img
                   src="https://avatars.githubusercontent.com/u/67799995?s=400&u=0c3fa793a6479ecc176433d53193b01e6a2f6a58&v=4"
                   alt="Emre Süslü"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -135,6 +136,7 @@ const App = () => {
                       className="sm:w-10 sm:h-10 w-8 h-8 rounded-full object-cover"
                       src={category?.strCategoryThumb}
                       alt={category?.strCategory}
+                      loading="lazy"
                     />
                     <p className="sm:text-xl text-lg ml-1">{category?.strCategory}</p>
                   </NavLink>
@@ -178,6 +180,7 @@ const App = () => {
                       className="sm:w-10 sm:h-10 w-8 h-8 rounded-full object-cover"
                       src={`https://www.themealdb.com/images/ingredients/${ingredient?.strIngredient}-Small.png`}
                       alt={ingredient?.strIngredient}
+                      loading="lazy"
                     />
                     <p className="sm:text-xl text-lg ml-1">{ingredient?.strIngredient}</p>
                   </NavLink>
