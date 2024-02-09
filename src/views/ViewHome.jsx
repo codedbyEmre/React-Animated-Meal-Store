@@ -41,7 +41,7 @@ const ViewHome = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ type: 'tween', duration: 1, delay: 0.35, ease: [0.25, 0.25, 0.25, 0.75] }}
-            className="font-medium mt-6"
+            className="font-medium"
           >
             <i className="text-primary md:text-6xl sm:text-5xl text-4xl mb-2">{getRandomHeadline}</i>
             <p className="mt-2 md:text-4xl sm:text-3xl text-2xl">{getRandomSubtitle}</p>
