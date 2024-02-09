@@ -27,6 +27,10 @@ const MealDetails = () => {
     setSeeMoreOrLess(!seeMoreOrLess);
   };
 
+  const formatTags = tags => {
+    return tags.split(',').join(', ');
+  };
+
   return (
     <>
       {error && <div className="error">{error}</div>}
@@ -96,7 +100,7 @@ const MealDetails = () => {
               {meal.strTags && (
                 <p className="mt-1">
                   Tags:
-                  <span className="ml-1 font-semibold break-words">{meal.strTags}</span>
+                  <span className="ml-1 font-semibold break-words">{formatTags(meal.strTags)}</span>
                 </p>
               )}
               {/* Instructions */}

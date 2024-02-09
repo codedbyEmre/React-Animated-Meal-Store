@@ -61,7 +61,7 @@ const App = () => {
     <section className="drawer drawer-mobile bg-base-200" data-theme={storedTheme}>
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content bg-base-300">
-        <nav className="navbar fixed z-10 w-full bg-base-100 shadow-lg border border-l-2 border-t-0 border-base-300">
+        <nav className="navbar fixed w-[-webkit-fill-available] z-10 bg-base-100 shadow-lg border border-l-2 border-t-0 border-base-300">
           <div className="flex-1 sm:ml-0 -ml-4">
             <Link to="/" className="btn btn-ghost text-base-0 normal-case sm:text-3xl text-2xl ml-2">
               <span className="text-primary">Meal</span>
